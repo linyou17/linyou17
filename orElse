@@ -1,0 +1,4 @@
+    int max = numbers.stream()
+                .max(Integer::compare)
+                .orElse(-1);
+        System.out.println("Max: " + max);

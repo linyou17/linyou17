@@ -1,0 +1,12 @@
+cout << "";
+            cin >> value1;
+            number = count(arr1, n, value1);
+            break;
+        }
+        else 
+        {
+            cout << "";
+        }
+    }
+    cout << " " << number << endl;
+    return 0;

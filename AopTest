@@ -1,0 +1,14 @@
+package cn.edu.springdemo.aopDemo;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class AopTest {
+    public static void main(String[] args) {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("aopDemo.xml");
+        LogAop logAop = (LogAop) applicationContext.getBean("logAop");
+        logAop.device1("device-");
+        logAop.add(522,524);
+        logAop.subtract(522,521);
+    }
+}

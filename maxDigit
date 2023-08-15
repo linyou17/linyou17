@@ -1,0 +1,29 @@
+let radixSort = arr => {
+  let mod = 10 
+  let dev = 1 
+  let maxDigit = 0 
+  let counter = []
+  arr.forEach(item => {
+    let digit = item.toString().split('').length
+    maxDigit = digit > maxDigit ? digit : maxDigit
+  })
+  for (let i = 0; i < maxDigit; i++, dev *= 10, mod *= 10) {
+    for (let j = 0; j < arr.length; j++) {
+      let bucket = Math.floor((arr[j] % mod) / dev)
+      if (counter[bucket] == null) {
+        counter[bucket] = []
+      }
+      counter[bucket].push(arr[j])
+    }
+    let pos = 0
+    for (let j = 0; j < counter.length; j++) {
+      let value = null
+      if (counter[j] != null) {
+        while ((value = counter[j].shift()) != null) {
+          arr[pos++] = value
+        }
+      }
+    }
+    // console.log('arr', arr)
+  return arr
+}
